@@ -46,13 +46,13 @@ export const ContactSection = () => {
             <div className="space-y-8">
                 <h3 className="text-2xl font-semibold mb-6"> Contact Information</h3>
 
-                <div className="space-y-6 justify-center">
+                <div className="space-y-6 justify-center ms-0 md:ms-25">
                     <div className="flex items-start space-x-4">
                         <div className="p-3 rounded-full bg-primary/10">
                             <Mail className="h-6 w-6 text-primary" />{" "}
                         </div>
                         <div>
-                            <h4 className="text-lg font-medium">Email</h4>
+                            <h4 className="text-lg font-medium pr-6">Email</h4>
                             <a href="mailto:eonsyntax@gmail.com" className="text-muted-foreground hover:text-primary transition-colors">
                                 eonsyntax@gmail.com
                             </a>
