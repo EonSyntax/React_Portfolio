@@ -7,16 +7,31 @@ import { GithubIcon } from "lucide-react";
 import { Twitter } from "lucide-react";
 import { Instagram } from "lucide-react";
 import { Send } from "lucide-react";
+import { Loader2 } from "lucide-react";
+import { useState } from "react";
+import {useToast} from "@/hooks/use-toast";
 
 
 
 export const ContactSection = () => {
+        const {toast} = useToast();
+        const [isSubmitting, setIsSubmitting] = useState(false);
+
 
     const handleSubmit = (e) => {
         e.preventDefault();
 
+        setIsSubmitting(true);
+
+        // Simulate form submission delay
+
         setTimeout(() => {
-            alert("Message sent successfully!");
+            toast({
+                title: "Message Sent",
+                description: "Your message has been sent successfully. I'll get back to you soon!",
+            });
+            setIsSubmitting(false);
+            e.target.reset();
         }, 1500);
     };
   return (
@@ -84,7 +99,7 @@ export const ContactSection = () => {
                 </div>
             </div>
 
-            <div className="bg-card p-8 rounded-lg shadow-xs">
+            <div className="bg-card p-8 rounded-lg shadow-xs" onSubmit={handleSubmit}>
                 <h3 className="text-2xl font-semibold mb-6">Send Message</h3>
                 <form className="space-y-6">
                     <div>
@@ -99,12 +114,21 @@ export const ContactSection = () => {
                         <label htmlFor="message" className="block mb-2 text-sm font-medium">Message</label>
                         <textarea id="message" name="message" required rows="4" className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-primary bg-input text-foreground resize-none" placeholder="Hello, I'd like to talk about..."></textarea>
                     </div>
-                    <button type="submit" className={cn("cosmic-button w-full flex items-center justify-center gap-2",
+                    <button type="submit" disabled={isSubmitting} className={cn("cosmic-button w-full flex items-center justify-center gap-2",
 
                         )}
                     >
-                        Send Message
-                        <Send size={16} />
+                        {isSubmitting ? (
+                            <>
+                                Sending...
+                                <Loader2 className="animate-spin" size={16} />
+                            </>
+                        ) : (
+                            <>
+                                Send Message
+                                <Send size={16} />
+                            </>
+                        )}
                     </button>
                 </form>
             </div>
