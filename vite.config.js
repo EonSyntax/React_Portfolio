@@ -11,8 +11,11 @@ export default defineConfig({
     tailwindcss(),
     VitePWA({
       registerType: 'autoUpdate',
+      workbox: {
+        globPatterns: ['**/*.{js,css,html,ico,png,svg}'],
+      },
       manifest: {
-        name: 'My Portfolio',
+        name: 'EonSyntax Portfolio',
         short_name: 'Portfolio',
         description: 'My React portfolio PWA',
         theme_color: '#0d1117',
@@ -21,12 +24,12 @@ export default defineConfig({
         start_url: '/',
         icons: [
           {
-            src: '/web-app-manifest-192x192.png',
+            src: '/logo192.png',
             sizes: '192x192',
             type: 'image/png',
           },
           {
-            src: '/web-app-manifest-512x512.png',
+            src: '/logo512.png',
             sizes: '512x512',
             type: 'image/png',
           },
