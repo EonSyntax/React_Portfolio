@@ -18,7 +18,7 @@ export default defineConfig({
         name: 'EonSyntax Portfolio',
         short_name: 'Portfolio',
         description: 'My React portfolio PWA',
-        theme_color: '#0d1117',
+        theme_color: 'hsl(250, 65%, 65%)',
         background_color: '#ffffff',
         display: 'standalone',
         start_url: '/',
