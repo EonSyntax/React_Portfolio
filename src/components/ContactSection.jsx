@@ -4,13 +4,12 @@ import { MapPin } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Linkedin } from "lucide-react";
 import { GithubIcon } from "lucide-react";
-import { Twitter } from "lucide-react";
 import { Instagram } from "lucide-react";
 import { Send } from "lucide-react";
 import { Loader2 } from "lucide-react";
 import { useState } from "react";
 import {useToast} from "@/hooks/use-toast";
-
+import { IconBrandX } from "@tabler/icons-react"
 
 
 export const ContactSection = () => {
@@ -84,7 +83,7 @@ export const ContactSection = () => {
                     <h4 className="mb-4 font-medium">Connect With Me</h4>
                     <div className="flex space-x-4 justify-center">
                         <a href="https://twitter.com/yourusername" target="_blank" className="text-muted-foreground hover:text-primary transition-colors">
-                            <Twitter size={20} />
+                            <IconBrandX size={20} />
                         </a>
                         <a href="https://linkedin.com/in/yourusername" target="_blank" className="text-muted-foreground hover:text-primary transition-colors">
                             <Linkedin size={20} />
