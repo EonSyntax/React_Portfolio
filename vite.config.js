@@ -15,9 +15,9 @@ export default defineConfig({
         globPatterns: ['**/*.{js,css,html,ico,png,svg}'],
       },
       manifest: {
-        name: 'EonSyntax Portfolio',
-        short_name: 'Portfolio',
-        description: 'My React portfolio PWA',
+        name: 'R1 EonSyntax Portfolio',
+        short_name: 'R1 Portfolio',
+        description: 'My React1 portfolio PWA',
         theme_color: 'hsl(250, 65%, 65%)',
         background_color: '#ffffff',
         display: 'standalone',
